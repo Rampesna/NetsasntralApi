@@ -7,7 +7,6 @@ use App\Services\EmployeeCallAnalysisService;
 use App\Services\QueueAnalysisService;
 use App\Services\SantralAuthService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 
 class MainController extends Controller
