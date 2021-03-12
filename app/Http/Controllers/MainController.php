@@ -35,12 +35,14 @@ class MainController extends Controller
                 $incomingService = new EmployeeCallAnalysisService(Http::withHeaders([
                     'Cookie' => 'PHPSESSID=' . session('MY_PHPSESSID')
                 ])->asForm()->post('http://uyumsoft.netasistan.com/istatistik/dahilibazli/adetpro', $params));
-                $analysis[$date]['incoming'] = $incomingService->incoming();
+
+                $analysis['incoming'] = $incomingService->incoming();
 
                 $outgoingService = new EmployeeCallAnalysisService(Http::withHeaders([
                     'Cookie' => 'PHPSESSID=' . session('MY_PHPSESSID')
                 ])->asForm()->post('http://uyumsoft.netasistan.com/istatistik/dahilibazligiden/adet', $params));
-                $analysis[$date]['outgoing'] = $outgoingService->outgoing();
+
+                $analysis['outgoing'] = $outgoingService->outgoing();
             } catch (\Exception $exception) {
                 (new SantralAuthService)->login();
                 goto loginAgain;
