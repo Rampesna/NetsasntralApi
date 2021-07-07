@@ -22,4 +22,5 @@ Route::namespace('App\\Http\\Controllers')->middleware([])->group(function () {
     Route::any('CallQueues', 'MainController@CallQueues');
     Route::any('EmployeeCallAnalysis', 'MainController@EmployeeCallAnalysis');
     Route::any('QueueAnalysis', 'MainController@QueueAnalysis');
+    Route::any('Abandons', 'MainController@Abandons');
 });
